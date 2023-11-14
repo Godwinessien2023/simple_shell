@@ -11,7 +11,7 @@
 int str_cmp(const char *seq1, const char *seq2, int len)
 {
 	int j;
-	
+
 	for (j = 0; j < len; j++)
 	{
 		if (seq1[j] != seq2[j])
