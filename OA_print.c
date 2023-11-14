@@ -8,7 +8,7 @@
 
 void _OA_printer(const char *letters)
 {
-	while (isatty(STDOUT_FILENO))
+	if (isatty(STDOUT_FILENO))
 	{
 		write(STDOUT_FILENO, letters, _len(letters));
 	}
