@@ -1,5 +1,5 @@
-#ifndef TEST_H
-#define TEST_H
+#ifndef SHELL_H
+#define SHELL_H
 
 #define SPACE 130
 #define MAX_INPUT_LENGTH 1024
@@ -49,23 +49,6 @@ extern char **environ;
 #include <fcntl.h>
 #include <errno.h>
 
-void _puts(char *str);
-ssize_t _getline(char **lineptr, size_t *n, int fd);
-void initialize_info(info_t *info);
-void cleanup_info(info_t *info);
-char *_strcat(char *to, const char *from);
-const char *str_chr(const char *sequence, char ch);
-char *str_cat(char *to, char *from);
-char *_sdup(const char *source);
-int str_cmp(const char *seq1, const char *seq2, int len);
-char *_cpy(char *destination, const char *source);
-size_t _len(const char *str);
-void _OA_printer(const char *letters);
-char *_strtok(char *str, const char *delimiter);
-int check_script(const char *file_name);
-void is_interactive(void);
-int _minenv(void);
-void cmd_parse(char *cmd, char **av);
 int _setenv(info_t *info, char *var, char *value);
 int cmd_execute(char **argv);
 int execve_cmd(char *total_path, char **argv);
@@ -80,5 +63,22 @@ list_t *add_node_end(list_t **head, const char *str, int num);
 char *starts_with(const char *str, const char *prefix);
 int _unsetenv(info_t *info, const char *var);
 int _putchar(char c);
+void _puts(char *str);
+ssize_t _getline(char **lineptr, size_t *n, int fd);
+void initialize_info(info_t *info);
+void cleanup_info(info_t *info);
+char *_strcat(char *to, const char *from);
+void _OA_printer(const char *letters);
+char *_strtok(char *str, const char *delimiter);
+int check_script(const char *file_name);
+void is_interactive(void);
+int _minenv(void);
+void cmd_parse(char *cmd, char **av);
+const char *str_chr(const char *sequence, char ch);
+char *str_cat(char *to, char *from);
+char *_sdup(const char *source);
+int str_cmp(const char *seq1, const char *seq2, int len);
+char *_cpy(char *destination, const char *source);
+size_t _len(const char *str);
 
 #endif
